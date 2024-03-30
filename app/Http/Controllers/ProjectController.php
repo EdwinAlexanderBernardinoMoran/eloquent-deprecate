@@ -21,4 +21,15 @@ class ProjectController extends Controller
 
         return $projects;
     }
+
+    public function rendimientoData(){
+        Project::chunk(200, function ($projects) {
+            foreach ($projects as $project) {
+                //Aquí escribimos lo que haremos con los datos (operar, modificar, etc)
+            }
+        });
+
+        $chunkProject = Project::latest()->get()->chunk(5);
+        return $chunkProject;
+    }
 }
