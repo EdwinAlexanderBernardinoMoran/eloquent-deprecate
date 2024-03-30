@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::get('/projects', [ProjectController::class, 'getData'])->name('getdata');
 Route::get('/projects/all', [ProjectController::class, 'getAllProjects'])->name('getall');
 Route::get('/projects/rendimiento', [ProjectController::class, 'rendimientoData'])->name('rendimientoData');
+Route::get('/projects/searchException/{parameter}', [ProjectController::class, 'searchException'])->name('searchException');
 

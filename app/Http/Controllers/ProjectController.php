@@ -32,4 +32,14 @@ class ProjectController extends Controller
         $chunkProject = Project::latest()->get()->chunk(5);
         return $chunkProject;
     }
+
+    public function searchException($parameter){
+        // findOrFail 🔍
+        $project = Project::findOrFail($parameter);
+
+        // firstOrFail 1️⃣
+        $project = Project::where('is_active', '=', 1)->firstOrFail();
+
+        return $project;
+    }
 }
